@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 
 public class KROptionTransaction implements Comparable<KROptionTransaction> {
 
@@ -234,11 +235,22 @@ public class KROptionTransaction implements Comparable<KROptionTransaction> {
 //		
 //	}
 	
+	public Double getTauInDays() {
+		return Double.valueOf(ChronoUnit.DAYS.between(getTransactionDate(), getMaturityDate()));
+	}
 	
 	public LocalDateTime getTransactionDateTime() { 
 		return transactionDateTime;
 	}
 
+	public String getMaturityString() {
+		
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		String formattedMaturityDate = maturityDate.format(formatter);
+		return formattedMaturityDate;
+		
+	}
+	
 	public String getIsCall() { 
 		return isCall;
 	}

@@ -5,14 +5,20 @@ import java.io.IOException;
 
 import com.opencsv.exceptions.CsvValidationException;
 
+import kr.geul.options.exception.AtTheMoneyException;
+import kr.geul.options.exception.DuplicateOptionsException;
+import kr.geul.options.exception.InconsistentArgumentLengthException;
+import kr.geul.options.exception.InconsistentOptionException;
+import kr.geul.options.exception.InvalidArgumentException;
+
 public class Main_202408 {
 
 	static long startTime, endTime;
 	
-	public static void main(String[] args) throws CsvValidationException, FileNotFoundException, IOException {
+	public static void main(String[] args) throws CsvValidationException, FileNotFoundException, IOException, InvalidArgumentException, InconsistentArgumentLengthException, AtTheMoneyException, InconsistentOptionException, DuplicateOptionsException {
 		
 		tic();
-		GetImpliedDividend_koribor.run();
+		MergeEstimateData.run();
 		toc();
 		
 	}

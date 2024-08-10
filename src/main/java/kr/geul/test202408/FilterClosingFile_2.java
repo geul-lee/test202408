@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
 
-public class FilterClosingFile {
+public class FilterClosingFile_2 {
 
 	static final double minimumOptionPrice = 0.375; 
 	
